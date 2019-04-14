@@ -4,9 +4,6 @@ import Vuex from 'vuex';
 import createLogger from 'vuex/dist/logger';
 import app from './modules/app';
 import user from './modules/user';
-import service from './modules/service';
-import change from './modules/change';
-import publish from './modules/publish';
 import permission from './modules/permission';
 import getters from './getters';
 
@@ -18,10 +15,7 @@ export default new Vuex.Store({
   modules: {
     user,
     app,
-    change,
-    publish,
-    permission,
-    service
+    permission
   },
   state: {},
   mutations: {},

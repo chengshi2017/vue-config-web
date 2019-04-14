@@ -2,7 +2,7 @@ module.exports = {
   singleQuote: true,
   jsxBracketSameLine: true,
   'space-before-function-paren': 0,
-  formatOnSave: true,
+  // formatOnSave: true,
   printWidth: 120,
-  jsxBracketSameLinte: true
+  jsxBracketSameLinte: false
 };

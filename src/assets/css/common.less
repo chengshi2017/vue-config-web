@@ -1,0 +1,323 @@
+.ant-btn {
+  margin-left: 0.25rem;
+}
+.ant-card-wider-padding .ant-card-body {
+  padding: 1.5rem 0.5rem;
+}
+
+.ant-calendar-picker {
+  display: inline-block;
+  width: 100% !important;
+}
+
+#nprogress .bar {
+  background: orangered !important;
+}
+
+.pagination {
+  text-align: right;
+}
+
+.show-overflow-tooltip {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  display: inline-block;
+}
+
+body {
+  // 打开滚动条固定显示
+  //overflow-y: scroll;
+
+  &.colorWeak {
+    filter: invert(80%);
+  }
+}
+
+.layout .ant-layout {
+  min-height: 100vh;
+  overflow-x: hidden;
+  &.ant-layout-has-sider {
+    flex-direction: row;
+  }
+  //
+  .trigger {
+    font-size: 20px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+    &:hover {
+      background: rgba(0, 0, 0, 0.025);
+    }
+  }
+  //
+  &.topmenu {
+    .ant-header-fixedHeader {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 9;
+      width: 100%;
+      transition: width 0.2s;
+
+      &.ant-header-side-opened {
+        width: 100%;
+      }
+
+      &.ant-header-side-closed {
+        width: 100%;
+      }
+    }
+    /* 必须为 topmenu  才能启用流式布局 */
+    &.content-width-Fluid {
+      .header-index-wide {
+        max-width: unset;
+        margin-left: 24px;
+      }
+
+      .page-header-index-wide {
+        max-width: unset;
+      }
+    }
+  }
+  //
+  &.sidemenu {
+    .ant-header-fixedHeader {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 9;
+      width: 100%;
+      transition: width 0.2s;
+
+      &.ant-header-side-opened {
+        width: calc(100% - 20%);
+      }
+
+      &.ant-header-side-closed {
+        width: calc(100% - 80px);
+      }
+    }
+  }
+  //
+  .header {
+    height: 64px;
+    padding: 0 12px 0 0;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+    position: relative;
+  }
+  //
+  .header,
+  .top-nav-header-index {
+    .user-wrapper {
+      float: right;
+      height: 100%;
+
+      .action {
+        cursor: pointer;
+        padding: 0 12px;
+        display: inline-block;
+        transition: all 0.3s;
+        height: 100%;
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.025);
+        }
+
+        .avatar {
+          margin: 20px 8px 20px 0;
+          color: #1890ff;
+          background: hsla(0, 0%, 100%, 0.85);
+          vertical-align: middle;
+        }
+
+        .icon {
+          font-size: 16px;
+          padding: 4px;
+        }
+      }
+    }
+
+    &.dark {
+      .user-wrapper {
+        .action {
+          color: rgba(255, 255, 255, 0.85);
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.16);
+          }
+        }
+      }
+    }
+  }
+  //
+  .top-nav-header-index {
+    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+    position: relative;
+    transition: background 0.3s, width 0.2s;
+
+    .header-index-wide {
+      max-width: 1200px;
+      margin: auto;
+      padding-left: 0;
+      display: flex;
+      height: 64px;
+
+      .ant-menu.ant-menu-horizontal {
+        border: none;
+        height: 64px;
+        line-height: 64px;
+      }
+
+      .header-index-left {
+        flex: 1 1;
+        display: flex;
+
+        .logo.top-nav-header {
+          width: 165px;
+          height: 64px;
+          position: relative;
+          line-height: 64px;
+          transition: all 0.3s;
+          overflow: hidden;
+
+          img {
+            display: inline-block;
+            vertical-align: middle;
+            height: 32px;
+          }
+
+          h1 {
+            color: #fff;
+            display: inline-block;
+            vertical-align: top;
+            font-size: 16px;
+            margin: 0 0 0 12px;
+            font-weight: 400;
+          }
+        }
+      }
+
+      .header-index-right {
+        float: right;
+        height: 64px;
+        overflow: hidden;
+      }
+    }
+
+    &.light {
+      background-color: #fff;
+
+      .header-index-wide {
+        .header-index-left {
+          .logo {
+            h1 {
+              color: #002140;
+            }
+          }
+        }
+      }
+    }
+  }
+  // 内容区
+  .layout-content {
+    margin: 24px 24px 0;
+    height: 100%;
+    padding: 0 12px 0 0;
+  }
+}
+
+.topmenu {
+  .page-header-index-wide {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+// drawer-sider 自定义
+.ant-drawer.drawer-sider {
+  .sider {
+    box-shadow: none;
+  }
+
+  &.dark {
+    .ant-drawer-content {
+      background-color: rgb(0, 21, 41);
+    }
+  }
+  &.light {
+    box-shadow: none;
+    .ant-drawer-content {
+      background-color: #fff;
+    }
+  }
+
+  .ant-drawer-body {
+    padding: 0;
+  }
+}
+
+// 菜单样式
+.sider {
+  box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
+  position: relative;
+  z-index: 10;
+
+  &.ant-fixed-sidemenu {
+    position: fixed;
+    height: 100%;
+  }
+
+  .logo {
+    height: 64px;
+    position: relative;
+    line-height: 64px;
+    padding-left: 24px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    background: #002140;
+    overflow: hidden;
+
+    img,
+    h1 {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    img {
+      height: 32px;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 20px;
+      margin: 0 0 0 12px;
+      font-family: 'Chinese Quote', -apple-system, BlinkMacSystemFont,
+      'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+      'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji', 'Segoe UI Symbol';
+      font-weight: 600;
+    }
+  }
+
+  &.light {
+    background-color: #fff;
+    box-shadow: 2px 0 8px 0 rgba(29, 35, 41, 0.05);
+
+    .logo {
+      background: #fff;
+      box-shadow: 1px 1px 0 0px #e8e8e8;
+
+      h1 {
+        color: unset;
+      }
+    }
+
+    .ant-menu-light {
+      border-right-color: transparent;
+    }
+  }
+}

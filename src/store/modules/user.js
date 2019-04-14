@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { LoginByUserName, logout, getUserInfo } from '@/axios/auth/login';
+import { LoginByUserName, logout, getUserInfo } from '@/api/auth/login';
 import * as types from './../mutation-types';
 import Message from 'ant-design-vue/es/message';
 

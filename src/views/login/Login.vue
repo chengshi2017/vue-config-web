@@ -3,7 +3,7 @@
     <a-layout>
       <a-layout-content class="login-bg">
         <div class="login-form">
-          <a-form :autoFormCreate="form => (this.form = form)">
+          <a-form :form="form">
             <div class="form-signing-heading"><span>IT服务管理系统</span></div>
             <div style="margin: 0 30px 0 40px;">
               <div style="float: left; width: 10%; margin-top: 3%;">
@@ -11,12 +11,12 @@
               </div>
               <a-form-item
                 class="form-control"
-                fieldDecoratorId="userName"
-                :fieldDecoratorOptions="{
-                  rules: [{ required: true, message: '请输入登录用户名' }]
-                }"
               >
                 <a-input
+                  v-decorator="[
+                    'userName',
+                    {rules: [{ required: true, message: '请输入登录用户名' }]}
+                  ]"
                   placeholder="请输入用户名"
                   size="large"
                   style="width: 80%;"
@@ -29,12 +29,12 @@
               </div>
               <a-form-item
                 class="form-control"
-                fieldDecoratorId="userPass"
-                :fieldDecoratorOptions="{
-                  rules: [{ required: true, message: '请输入登录密码' }]
-                }"
               >
                 <a-input
+                  v-decorator="[
+                    'userPass',
+                    {rules: [{ required: true, message: '请输入登录密码' }]}
+                  ]"
                   type="password"
                   size="large"
                   placeholder="请输入密码"
@@ -87,6 +87,7 @@ export default {
   components: {},
   data() {
     return {
+      form: this.$form.createForm(this),
       errorMessage: null,
       currUser: '',
       startLoading: false
@@ -109,15 +110,13 @@ export default {
             userLogin
           );
           const paramObj = {
-            token: this.GLOBAL.tokenValue,
             paramObject: JSON.stringify(encryptedUserLoginObj),
-            timestamp: ''
           };
           this.$store
             .dispatch('LoginByUserName', paramObj)
             .then(res => {
               if (res.code === '111111') {
-                this.$router.push({ path: '/service/servicePage' });
+                this.$router.push({ path: '/' });
               } else if (res.code === '010101') {
                 this.errorMessage = '密码错误或者登录用户名不存在, 请重试';
               } else {
